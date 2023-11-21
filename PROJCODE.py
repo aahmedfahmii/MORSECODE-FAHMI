@@ -15,18 +15,25 @@ my_dictionary = {
 
 def encryption(word):
 
-    morse_bank = []  #empty empty list to store user input
-    
-    for i in word.upper():      # used upper method to change all given characters to uppercase
-                                #for loop iterates over all given letters
-        if i in my_dictionary:     
-            morse_bank.append(my_dictionary[i])     #if letter is in the morse dictionary it will add its morse representation to the empty list
+    morse_bank = []  #empty list to store user input
 
-        elif i == " ":      #if a space is given it will return '|'
-            morse_bank.append('|')
+    index = 0
+    
+    while index < len(word):     # while loop iterating over all given letters
+        
+        letter = word[index].upper() # used upper method to change all given characters to uppercase
+        
+        if letter in my_dictionary:    
+            morse_bank.append(my_dictionary[letter])     #if letter is in the morse dictionary it will add its morse representation to the empty list
+            index += 1
+
+        elif letter == ' ':
+            morse_bank.append('|')       #if a space is given it will return '|' 
+            index+=1
 
         else:   
-            morse_bank.append("#")     #application will return '#' for unknown characters
-    
-    return (morse_bank)
+            morse_bank.append("#")     #application will return "#" for unknown characters
+            index += 1
+
+    return ''.join(morse_bank)    #join method used to bring the elements in the morse_bank list together without spaces
 
