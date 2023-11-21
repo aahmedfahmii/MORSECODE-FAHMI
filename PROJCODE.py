@@ -11,7 +11,7 @@ my_dictionary = {
 '0': '-----', ' ': '|', ',': '--..--', '.': '.-.-.-', '?': '..--..', '!': '-.-.--'
 }
 
-#DEFINING MY ENCRYPTION FUNCTION WHICH IS GOING TO TRANSLATE CODE FROM NORMAL ENGLISH LETTERS TO MORSE CODE
+#DEFINING MY ENCRYPTION FUNCTION WHICH IS GOING TO TRANSLATE NORMAL ENGLISH LETTERS TO MORSE CODE
 
 def encryption(word):
 
@@ -27,13 +27,32 @@ def encryption(word):
             morse_bank.append(my_dictionary[letter])     #if letter is in the morse dictionary it will add its morse representation to the empty list
             index += 1
 
-        elif letter == ' ':
-            morse_bank.append('|')       #if a space is given it will return '|' 
-            index+=1
-
         else:   
             morse_bank.append("#")     #application will return "#" for unknown characters
             index += 1
 
     return ''.join(morse_bank)    #join method used to bring the elements in the morse_bank list together without spaces
 
+
+#DEFINING MY DECRYPTION FUNCTION WHICH IS GOING TO TRANSLATE MORSE CODE TO NORMAL ENGLISH LETTERS
+
+def decryption(code):
+
+    letter_bank = []
+
+    code = code.split(' ')   #this 'split' method seperates the string at every ' ' character
+
+    new_dict = {letter : morse for morse, letter in my_dictionary.items()}   #this is called reverse mapping which basically means it does the opposite mapping of "my_dictionary" making it easier to find letters for morse by switching the key and value
+ 
+    for i in code:
+        
+        if i in new_dict:
+            letter_bank.append(my_dictionary[i])
+
+        elif i == ' ':
+            letter_bank.append('|')       #if a space is given it will return '|' 
+
+        else:   
+            letter_bank.append("#")     #application will return "#" for unknown characters
+    
+    return ''.join(letter_bank)    #join method used to bring the elements in the letter_bank list together without anything between them which is represented by the empty string ('')
