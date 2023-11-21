@@ -22,8 +22,11 @@ def encryption(word):
         if i in my_dictionary:     
             morse_bank.append(my_dictionary[i])     #if letter is in the morse dictionary it will add its morse representation to the empty list
 
+        elif i == " ":      #if a space is given it will return '|'
+            morse_bank.append('|')
+
         else:   
-            morse_bank.append(" ")     #if the letter is not in the morse dictionary it will return nothing
+            morse_bank.append("#")     #application will return '#' for unknown characters
     
     return (morse_bank)
 
