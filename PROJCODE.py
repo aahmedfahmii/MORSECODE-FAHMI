@@ -95,4 +95,4 @@ def start():
         else:
             print("UNKOWN PROGRAMME, PLEASE CHOOSE 'E FOR ENCRYPTION', 'D FOR DECRYPTION' OR 'X' TO EXIT")
 
-    start()         #finally calling my start function to run my code and start my application
+start()         #finally calling my start function to run my code and start my application
