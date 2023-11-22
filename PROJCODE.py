@@ -95,4 +95,5 @@ def start():
         else:
             print("UNKOWN PROGRAMME, PLEASE CHOOSE 'E FOR ENCRYPTION', 'D FOR DECRYPTION' OR 'X' TO EXIT")
 
-start()         #finally calling my start function to run my code and start my application
+if __name__ == '__main__':    #USED TO PREVENT THE UNITTESTING PART FROM RUNNING MY PROJCODE  TEXTFILE INSTEAD OF RUNNING ITS OWN CODE
+    start()         #finally calling my start function to run my code and start my application
