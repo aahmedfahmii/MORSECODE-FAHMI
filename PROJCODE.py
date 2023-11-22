@@ -24,7 +24,7 @@ def encryption(word):
         letter = word[index].upper() # used upper method to change all given characters to uppercase
         
         if letter in my_dictionary:    
-            morse_bank.append(my_dictionary[letter])     #if letter is in the morse dictionary it will add its morse representation to the empty list
+            morse_bank.append(my_dictionary[letter] + ' ')     #if letter is in the morse dictionary it will add its morse representation to the empty list
             index += 1
 
         elif letter == ' ':
