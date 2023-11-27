@@ -82,11 +82,19 @@ def start():
 ).upper()               #changes any user input to capital letters to prevent from handling errors, ensures consistency and a more user friendly experience where it forgives regardless of capital or lower case input
         
         if programme == 'E':
-            start_e = input("WELCOME TO THE ENCRYPTION REALM, PLEASE ENTER YOUR LETTERS: ")
+            start_e = input(
+                """WELCOME TO THE ENCRYPTION REALM, PLEASE ENTER YOUR LETTERS: 
+note that '#' will be shown for unknown characters
+"""
+)
             print('ORIGINAL TEXT:' , start_e)
             print('MORSE CODE:' , encryption(start_e))
         elif programme == 'D':
-            print("PLEASE ENTER EACH LETTER'S MORSE CODE REPRESENTATION WITH EXACTLY 1 SPACE IN BETWEEN. (e.g. ABC = .- -... -.-. )")
+            print("""PLEASE ENTER EACH LETTER'S MORSE CODE REPRESENTATION WITH EXACTLY 1 SPACE IN BETWEEN.
+ (e.g. ABC = .- -... -.-. )
+ note that '#' will be shown for unknown characters
+ """
+ )
             start_d = input("WELCOME TO THE DECRYPTION REALM, PLEASE ENTER YOUR MORSE CODE: ")
             print('ORIGINAL CODE:' , start_d)
             print('DECRYPTED TEXT:' , decryption(start_d))
