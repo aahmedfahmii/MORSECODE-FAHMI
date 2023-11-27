@@ -41,6 +41,9 @@ def encryption(word):
 
 def decryption(code):
 
+    if '  ' in code:
+        return('(ATTENTION: This is not your translation! Incorrect spacing detected. Please choose your programme again and re-enter your characters.)')
+    
     letter_bank = []
 
     code = code.split(' ')   #this 'split' method seperates the string at every ' ' character
